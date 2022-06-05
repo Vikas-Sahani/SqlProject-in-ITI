@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Data Types</title>
+    <style type="text/css">
+        body {
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 align="center"> Data Types</h1>
+
+    <ul>
+        <li><u>INT or INTEGER</u></li>:-It holds whole number between -32, 768 and 32, 767 either it is negative or
+        positive. It can not hold a decimal numbers. The maximum number of digits may be specified in parenthesis.
+    </ul>
+    Syntax:-column_name INR (size);
+    <br>
+    <br>
+
+    <ul>
+        <li><u>DEC or DECIMAL(size, p)</u>- It holds fixed point numbers. Size is the total number of digits and p is the
+            number of digits after the decimal point . The decimal point and the negative sign '-' are not counted in size.
+            If p is 0, values have no decimal point. The maximum number of size for decimal is 65 and for p 30. if p omitted
+            the default is 0 if size is omitted, the default is 10.</li>
+    </ul>
+
+    Syntax:-column_name DECIMAL (size,p);
+    <br><br>
+
+    <ul>
+        <li><u>CHAR or CHARACTER</u>-It holds a dixed length string (can contain letters, numbers, and special characters).
+            The fixed size is specified in parenthesis. It can store up to 255 charactes. </li>
+    </ul>
+
+    Syntax:-column_name CHAR (20);
+    <br><br>
+
+    <ul>
+        <li><u>VARCHAR</u>-It holds abariable length string (can contain letters, nmbers, and special characters). The
+            maximum size is specified in parenthesis. It can store up to 255 characters.</li>
+    </ul>
+
+    Syntax:-column_name VARCHAR (size);
+    <br><br>
+
+    <ul>
+        <li><u>TEXT</u>-It holds a string with a maximum length of 65,535 characters. </li>
+    </ul>
+
+    Syntax:-column_name TEXT;
+    <br><br>
+
+    <ul>
+        <li><u>DATE</u>-It displays Date values in yyyy-mm-dd format.</li>
+    </ul>
+
+    Syntax:-age DATE;
+    <br><br>
+
+    <ul>
+        <li><u>DATETIME-</u>It displays DATETIME Values in yyyy-mm-dd hh:mm:ss format.</li>
+    </ul>
+
+    Syntax:-column_name DATETIME;
+    <br><br>
+
+    <ul>
+        <li><u>TIMESTAMP</u>- It also displayes date and time.</li>
+    </ul>
+
+    Syntax:-column_name TIMESTAMP; <br><br>
+</body>
+
+</html>

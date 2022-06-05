@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title> JOIN </title>
+    <link rel="stylesheet" type="text/css" href="external ss.css">
+</head>
+
+<body>
+    <h1 align="center"> JOIN </h1>
+
+    <h2 align="center"> INNER JOIN </h2>
+    An INNER JOIN is a CROSS JOIN with some result rows removed by a conditoin in the query.
+
+    <ul>
+        <li> EQUIJOIN </li>
+        <li> NON-EQUIJOIN </li>
+        <li> NATURAL JOIN </li>
+    </ul>
+
+    <u><b>* EQUIJOIN </u></b>
+    SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM parent_table_name <br>
+    INNER JOIN child_table_name <br>
+    ON column_name of parent_table = column_name of child_table; <br>
+
+    <u><b>* NON-EQUIJOIN <> </u></b>
+    SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM child_table_name <br>
+    INNER JOIN parent_table_name <br>
+    ON column_name of parent_table <> column_name of child_table; <br>
+
+
+        <u><b>* NATURAL JOIN <> </u></b>
+        SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM child_table_name <br>
+        NATURAL JOIN parent_table_name; <br>
+
+        <h2 align="center"> OUTER JOIN </h2>
+        An OUTER JOINS returns all rows from one of the tables, along with matching information with matching
+        information from another table.
+
+        <ul>
+            <li> LEFT OUTER JOIN/LEFT JOIN </li>
+            <li> RIGHT OUTER JOIN/RIGHT JOIN </li>
+            <li> FULL OUTER JOIN/FULL JOIN </li>
+        </ul>
+
+        <u><b>* LEFT OUTER JOIN/LEFT JOIN </u></b>
+        The LEFT JOIN keyword returns all rows from the left table, with the matching rows in the right table. The
+        result is NULL in the right side when there is no match. <br>
+        In a LEFT OUTER JOIN the table that comes before the join is the left table, and the table that comes after the
+        join is the right table. <br>
+
+        Syntax:- <br>
+        SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM parent_table_name <br>
+        LEFT JOIN child_table_name <br>
+        ON column_name of parent_table = column_name of child_table; <br>
+
+
+
+        <u><b>* RIGHT OUTER JOIN/RIGHT JOIN </u></b>
+        The RIGHT JOIN keyword returns all rows from the fight table, with the matching rows in the left table. The
+        result is NULL in the left side when there is no match. <br>
+        In a RIGHT OUTER JOIN the table that comes before the join is the Right table, and the table that comes after
+        the join is the Left table. <br>
+        Syntax:- <br>
+        SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM parent_table_name <br>
+        RIGHT JOIN child_table_name <br>
+        ON column_name of parent_table = column_name of child_table; <br>
+
+
+        <u><b>* FULL OUTER JOIN/FULL JOIN </u></b>
+        The FULL OUTER JOIN returns all rows from the left table and from the right table. <br>
+        The FULL OUTER JOIN combines the result of both LEFT and RIGHT joins. <br>
+        Syntax:- <br>
+        SELECT column_name(parent_table_name.column_name,child_table_name.column_name) FROM child_table_name <br>
+        NATURAL JOIN parent_table_name; <br>
+        # SQL is not support the full outer join therefore here is not given example and proper syntax.
+
+        <h2 align="center"> SELF JOIN </h2>
+        Ex:- <br>
+        SELECT ename Name,m.name Manager <br>
+        FROM empman e <br>
+        INNER JOIN empman m <br>
+        ON e.manid = m.empid
+
+        SELECT ename Name,m.name Manager <br>
+        FROM empman e <br>
+        LEFT JOIN empman m <br>
+        ON e.manid = m.empid
+
+        <h2 align="center"> IFNULL() </h2>
+        Syntax:- IFNULLL(exp1, exp2) <br>
+        If exp1 is not NULL then IFNULL() returns exp1 otherwise it returns exp2. <br><br>
+
+        Ex:- <br>
+        SELECT IFNULL ('vilas', 'aahat') AS Example <br>
+
+        SELECT e.name Name, IFNULL( m.name, 'No Manager') AS Manager FROM empaman e <br>
+        LEFT JOIN empaman m <br>
+        ON e.manid = m.empid;
+
+        <h2 align="center"><U> UNION </U></h2>
+        A UNION combines the results of two or more quires into one table. <br>
+        Rules:-
+        <ol>
+            <li> The number if column in each SELECT statment must match.</li>
+            <li> The data types in the columns should be same.</li>
+            <li> The columns in each SELECT statement must be in the same order. </li>
+            <li> Must have the same expressions and aggregate function in each SELECT statement </li>
+            <li> The UNION operator selects only distinct values by default and It doesn't select duplicate values.</li>
+        </ol>
+
+        Ex:- <br>
+        SELECT name FROM student <br>
+        UNION <br>
+        SELECT name FROM employee;
+
+        <h2 align="center"><U> UNION ALL </U></h2>
+        UNION ALL returns every match whether it is duplicate or distinct ones.
+
+        <h2 align="center"><U> INTERSECT </U></h2>
+        INTERSECT retuns only those columns that are in the first query and also in the second query. <br>
+        SELECT name FROM student <br>
+        INTERSECT <br>
+        SELECT name FROM Employee;
+
+        <h2 align="center"><U> EXCEPT </U></h2>
+        EXCEPT returns only those columns that are in the first query but not in the second query. <br>
+
+        SELECT name FROM student <br>
+        EXCEPT <br>
+        SELECT name FROM Employee;
+
+
+
+
+</body>
+
+</html>

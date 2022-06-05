@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <title>Where</title>
+    <link rel="stylesheet" type="text/css" href="external ss.css">
+</head>
+
+<body>
+    <h1 align="center">Where</h1>
+
+    WHERE is used to search for specific data.
+
+    <h2><u>Conditions of Where </h2></u>
+
+    1)<u><b> Specific data from all column</b></u><br>
+
+    Syntax:-<br>
+    SELECT * FROM table_name<br>
+    WHERE column_name operator 'value';
+
+    <br><br>2)<u><b> Specific data from specific column </b></u><br>
+
+    Syntax:-<br>
+    SELECT column_name FROM table_name<br>
+    WHERE column_name operator 'value';<br>
+
+    <br><u>Note</u>:-Value can be text or numeric. If it is text then we have to put single quotes.<br><br>
+
+    <img src="image of sql\Operators.png" height="50%" width"50%">
+
+
+    <h2 align="center">NULL VALUE</h2>
+
+    NULL values represent missing unknown data.
+    NULL= not equal to zero<br><br>
+
+    <b>IS NULL</b>-This is used to select only the records with NULL values in the column.<br>
+
+    Syntax:-<br>
+    SELECT column_name FROM table_name<br>
+    WHERE column_name IS NULL;<br>
+
+    <br><br><b> IS NOT NULL </b>-This is used to select only the records with no NULL values in the column.<br>
+
+    Syntax:-<br>
+    SELECT column_name FROM table_name<br>
+    WHERE column_name IS NULL;
+
+
+    <h2 align="center"> OR </h2>
+    The OR operator displays a record if either the first condition OR the second condition are true.<br>
+
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name = 'value'<br>
+    OR column = 'value';
+
+    <h2 align="center"> AND OR </h2>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name = 'value' <br>
+    AND(column_name1 = 'value' OR column_name1 = 'value'); <br>
+
+    <h2 align="center"> IN </h2>
+    The IN operator allows you to specify multiple values in a WHERE clause.
+
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name IN ('value1','value2',...); <br>
+
+    <h2 align="center"> NOT IN </h2>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name NOT IN ('value1','value2',...); <br>
+
+    <h2 align="center"> BETWEEN </h2>
+    The BETWEEN operator selects values within a range. The values can be numbers, text or dates.
+
+    <b>1. Between Number</b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name BETWEEN value1 AND value2;<br><br>
+
+    <b>2. Between Text </b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name BETWEEN "value1" AND "value2;"
+
+    <b>3. Between Date </b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name BETWEEN 'yyyy/mm/dd' AND 'yyyy/mm/dd';
+
+    <h2 align="center"> NOT BETWEEN </h2>
+    To display the data which is not in the range. <br><br>
+
+    <b> 1.NOT BETWEEN Number </b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name NOT BETWEEN value1 AND value2;<br>
+
+    <b>2. Between Text </b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name NOT BETWEEN "value1" AND "value2;"<br>
+
+    <b>3. Between Date </b>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name NOT BETWEEN 'yyyy/mm/dd' AND 'yyyy/mm/dd';
+
+    <h3 align="center"> BETWEEN with IN</h3>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE (column_name BETWEEN value1 AND value2) AND column_name IN (value1,value);
+
+    <h3 align="center"> BETWEEN with NOT IN</h3>
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE (column_name BETWEEN value1 AND value2) AND NOT column_name IN (value1,value);
+
+    <h3 align="center"> LIKE </h3>
+    The LIKe operator is used to search for aspecified pattern in a column.
+    Syntax:-<br>
+    SELECT * FROM table_name <br>
+    WHERE column_name LIKE 'pattern';
+
+    <h3 align="center"> <u>Wildcards</u> </h3>
+    Wildcards are used to search for data within a table. These characters are used with the LIKE operator.
+
+    <center><img src="image of sql\wildcard.png" height="50%" width"50%"></center>
+
+    <ol>
+        <li>%:-Zero or more characters <br> <br>
+            'Geek%' -All starting with geek Ex:-Geekyshows <br>
+            '%shows'-All ending with shows. Ex:-Geekyshows <br>
+            '%sh%'-All containing with sh. Ex:-Geekyshows </li>
+
+        <li>_:-One single charachter <br><br>
+            'Show_':-Starting with show then any character. Ex:-shows <br>
+            '_eek':-any character then eek. Ex:- geek <br>
+            'G_e_k':-G then any character, then e then any character, then k Ex:-Geek</li>
+    </ol>
+
+    <h3 align="center"> NOT LIKE </h3>
+    Syntax:- <br>
+    SELECT * FROM table_name <br>
+    WHERE column_name NOT LIKE 'pattern';<br>
+
+    <h2 align="center"> ORDER BY </h2>
+    This is used to sort the records. <br>
+    ASC-It sorts in ascending order (by default) <br>
+    DESC- It sorts in descending order.
+
+    <ol>
+        <li><b>Sort in descending order</b> <br>
+            Syntax:- <br>
+            SELECT * FROM table_name <br>
+            ORDER BY column_name DESC;<br></li>
+
+        <li><b>Sort in ascending order</b> <br>
+            Syntax:- <br>
+            SELECT * FROM table_name <br>
+            ORDER BY column_name ASC;(ASC is optional)<br></li>
+    </ol>
+</body>
+
+</html>

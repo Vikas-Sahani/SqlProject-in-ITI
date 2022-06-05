@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<title>Insert Into</title>
+
+	<link rel="stylesheet" type="text/css" href="external ss.css">
+
+</head>
+
+<body>
+
+	<h1 align="center"> Intsert Into</h1>
+
+	The INSERT INTO statement is used new records/row/tuple ina table.
+
+	<br><br>
+
+	Syntax:-INSERT INTO table_name (column1, column2, column3, column4, ...)<br>
+	VALUES (value1, value2, value3, value4 ...);
+	<br><br><br>
+
+	<u><b>Rules:-</u></b>
+	<ul>
+		<li>Column and Value order should be sae.</li>
+		<li>Any value that goes into a VARCHAR, CHAR, DATE or TEXT column has single quotes around it. There are no need
+			of quotes for numeric values (INT, DEC)
+	</ul>
+	</li>
+
+	<h2>Conditions of Insert Into</h2>
+
+	<b>1)Without specifying column name</b><br>
+	Syntax:-INSERT INTO table_name<br>
+	VALUES (value1, value2, value3, value4,...);
+
+	<br><br>
+	<b>2)Changing the order of column</b>
+	<br>Syntax:-INSERT INTO table_name (column2, column1, column3, column4, ...)
+	<br>VALUES (value2, value1, value3, value4,...);
+
+	<br><br>
+	<b>3)Insert Data only in Specified Columns</b><br>
+	Syntax:-INSERT INTO table_name(column1, column2, column3)
+	<br>VALUES (value1, value2, value3);
+
+	<br><br>
+	<b>4)Insert multiple record at one time.</b><br>
+	Syntax:-INSERT INTO table_name(column1, column2, column3, column4)
+	<br>VALUES(value1, value2, value3, value4),
+	<br>(value1, value2, value3, value4),
+	<br>(value1, value2, value3, value4);
+
+	<h3> <b>Single Quotes Problem </b></h3>
+	<u>PROBLEM=</u>INSERT INTO my_tab(t_id, c_name, address<br>
+	VALUES (142, <u>'K.K's Company'</u>, 'Delhi');
+
+	<br>There are tow way to solve this problem:-
+	<ul>
+		<li>Use backslash</li>
+		Ex:-'K.K<b>\</b>'s company'
+		<li>Use two time single quotes</li>
+		Ex:-'K.K<b>'</b>'s Company'
+
+</body>
+
+</html>

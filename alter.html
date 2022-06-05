@@ -1,0 +1,231 @@
+<html>
+
+<head>
+       <title> ALTER TABLE </title>
+       <link rel="stylesheet" type="text/css" href="external ss.css">
+</head>
+
+<body>
+       <h1 align="center"> ALTER TABLE </h1>
+       This command is used to Add/Change/Modify/Drop existing structure of the table.
+
+       <ul>
+              <li> ADD Column </li>
+              <li> Enable/Desable Constraints </li>
+              <li> Change Column </li>
+              <li> Modify Column </li>
+              <li> Drop Column </li>
+       </ul>
+
+       <u><b>ADD Column-</u></b> When a new column is to be added to the table structure without constraints. <br>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD COLUMN column_name data type; <br>
+
+       <b> Add more than one column </b> <br>
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD COLUMN column_name data type; <br>
+       ADD COLUMN column_name data type; <br>
+
+       <b> ADD Column by Position </b>
+       <ul>
+              <li> Last (by default) </li>
+              <li> First </li>
+              <li> After </li>
+       </ul>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD COLUMN column_name data type (size) FIRST; <br>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD COLUMN column_name data type (size) AFTER column_name; <br>
+
+       <b> ADD Column - When a new column is to be added to the table structure with constraints. </b>
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD COLUMN column_name data_type (size) Constraint_name, ADD constraint_name column_name; <br>
+
+       <b> When integrity constraints have to be included. </b>
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       ADD CONSTRAINT constraint_name column_name; <br>
+
+       <b> Change Column- </b>This is used to change name and data type of an existing column. Without Constraints:-
+       <br>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       CHANGE COLUMN old_column_name new_column_name new_data_type (size); <br>
+
+       <b> Change more than one column- </b>
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       CHANGE COLUMN old_column_name new_column_name new_data_type (size); <br>
+       CHANGE COLUMN old_column_name new_column_name new_data_type (size); <br>
+
+       <b> Change column </b>With Constraints:-
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       CHANGE COLUMN old_column_name new_column_name new_data_type (size) Constraint_name <br>
+       ADD constraint_name (column_name);
+
+       <b> MODIFY COLUMN- </b>This is used to modify size of the data type or the data type itself of an existing column
+       without shanging column name. <br>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       MODIFY COLUMN column_name data_type (size); <br>
+
+       <b><u> DROP COLUMN - </u></b><b>When column in a table need to delete </b> <br>
+
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       DROP COLUMN column_name ; <br>
+
+       <b>When removing constraint from a column. </b>
+       Syntax:- <br>
+       ALTER TABLE table_name <br>
+       DROP constraint_name column_name; <br>
+
+       <b><u> DROP TABLE </u></b> <br>
+       This command is used to delete/remove table from the database.
+
+       Syntax:- <br>
+       DROP TABLE table_name; <br>
+
+
+       <b><u> TRUNCATE TABLE </u></b> <br>
+       When we only want to delete the data inside the talbe, and not the table itself. <br>
+
+       Syntax:- <br>
+       TRUNCATE TABLE table_name; <br>
+
+       <b><u> RENAME TABLE </u></b> <br>
+       This command is used to rename one or more table. <br>
+
+       Syntax:- <br>
+       RENAME TABLE old_table_name to new_table_name; <br>
+
+       <h1 align="center"> ALTER DATABASE </h1>
+       ALTER DATABASE enables you to change the overall characteristics of a database. These characteristics are stored
+       in the db.opt file in the database derectory. To use ALTER DATABASE, you need the ALTER privilege on the databse.
+       <br>
+       ALTER SCHEMA is a synonym for ALTER DATABASE. <br>
+       The database name can be omitted from the syntax, in which case the statement applies to the default database.
+       <br>
+       Syntax:-ALTER DATABASE daftabase_name; <br>
+
+
+       <h1 align="center"> DROP DATABASE </h1>
+       The DROP DATABASE statement is used to delete a database. <br>
+       Syntax:-DROP DATABASE daftabase_name; <br>
+
+
+
+       <u>
+              <H1 align="center"> UPDATE </H1>
+       </u>
+       The UPDATE statement is used to update existing records in a table. <br>
+       Syntax:- <br>
+       UPDATE table_name <br>
+       SET column1=value1,column1=value2... <br>
+       WHERE some_column = some_value; <br>
+
+       <u>Note-</u>WHERE is necessary otherwise all records will be replace with given value.
+
+       <u>
+              <H1 align="center"> UPDATE with CASE </H1>
+       </u>
+       UPDATE table_name <br>
+       SET new_column = <br>
+       CASE <br>
+       WHEN column_name1 = some_value1 THEN new value1 <br>
+       WHEN column_name2 = some_value2 THEN new value2 <br>
+       ELSE new_value3 <br>
+       END; <br>
+
+       <u><b> ON UPDATE </u></b>
+       <ul>
+              <li> ON UPDATE CASCADE </li>
+              <li> ON UPDATE CASCADE </li>
+              <li> ON UPDATE CASCADE </li>
+              <li> ON UPDATE CASCADE </li>
+       </ul>
+
+       ON UPDATE is use after foreign key when creating a table for update the table after creating table
+
+       <u>
+              <H1 align="center"> DELETE </H1>
+       </u>
+       The DELETE statement is used to delete records in a table. <br>
+
+       <b>1. Delete a Specific Record </b>
+       Syntax:- <br>
+       DELETE FROM table_name <br>
+       WHERE some_column = some_value; <br><br>
+
+       <u>Note</u>-WHERE is necessary otherwise all records will be delete. <br><br>
+
+
+       <u><b> Unable to Delete Parent Table </b></u> = This used to delete the content of a Table. <br>
+
+       1st a fall we have to delete child table contents of a row <br>
+
+       DELETE FROM child_table <br>
+       WHERE condition; <br>
+
+       DELETE FROM child_table <br>
+       WHERE condition; <br>
+
+       After that we can delete the content of a parent by using this syntax:- <br>
+
+       DELETE FROM parent_table <br>
+       WHERE condition; <br>
+
+       <u><b> ON DELETE </u></b>
+       <ul>
+              <li> ON DELETE CASCADE </li>
+              <li> ON DELETE SET NULL </li>
+              <li> ON DELETE NO ACTION </li>
+              <li> ON DELETE RESTRICTION </li>
+       </ul>
+       All ON DELETE functions are used after foreign key when creating table for deleteing, restriction from deleting
+       etc. after creating tables.
+
+
+       <u>
+              <H1 align="center"> COPY old Table to new Table </H1>
+       </u>
+       Within Same Database <br>
+       Syntax:- <br>
+       CREATE TABLE new_table LIKE old_table; <br>
+       INSERT new_table SELECT * FROM old_table;
+       <br><br>
+
+       Within different Database <br>
+       Use the database where you want to copy the old table <br>
+       Syntax:- <br>
+       CREATE TABLE new_table LIKE old_db.old_table; <br>
+       INSERT new_table SELECT * FROM old_db.old_table;
+       <br><br>
+
+       <u>
+              <H2 align="center"> CROSS JOIN/Cartesian Join/Cartesian Product/Cross Product </H2>
+       </u>
+       The Cross Join returns every row from one table crossed with every row from the second. <br>
+
+       Syntax:-
+       <ul>
+              <li> SELECT * FROM Employee CROSS JOIN Department; </li>
+              <li> SELECT Name,depname FROM Employee CROSS JOIN Department; </li>
+              <li> SELECT * FROM Employee, Department; </li>
+
+
+       </ul>
+</body>
+
+</html>
